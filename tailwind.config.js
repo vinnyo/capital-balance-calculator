@@ -1,14 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors');
+
 module.exports = {
   mode: 'jit',
-  important: '#sayf',
+  important:'#padua',
   content: [
-    "./src/**/*.{html,ts}",
+    "./src/**/*.{html,ts}"
   ],
   theme: {
     colors:{
-      gray: colors.gray
+      gray: colors.gray,
+      white: colors.white
     },
     extend: {},
   },
