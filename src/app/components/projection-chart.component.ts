@@ -36,11 +36,18 @@ export class ProjectionChartComponent implements OnInit, OnDestroy {
                         responsive: true,
                         plugins: {
                             legend: {
-                                position: 'top',
-                            },
+                                display:false
+                            }
                         },
+                        scales:{
+                            y:{
+                                ticks: {
+                                    callback: (value) => this.yAxisFormat(value)
+                                }
+                            }
+                        }
                     },
-                    data,
+                    data
                 });
             }
         });
@@ -48,5 +55,14 @@ export class ProjectionChartComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         this.data_sub?.unsubscribe();
+    }
+
+    private yAxisFormat(value:number|string){
+        //Format values to include thousand commas.
+        if(value >= 1000){
+            return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          } else {
+            return '$' + value;
+          }
     }
 }
