@@ -1,0 +1,87 @@
+<header class="bg-gray-200">
+    <h1 mat-dialog-title >Edit Calculator Inputs</h1>
+</header>
+<div mat-dialog-content>
+    <div [formGroup]="form" class="flex flex-col w-full p-4 pt-0">
+
+        <label>Salary ($)</label>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="salary" type="number">
+        </mat-form-field>
+    
+        <div class="flex w-full space-x-4">
+            <div class="flex flex-col w-1/2">
+                <label>Contribution Rate (%)</label>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="contribution_rate" type="number">
+                    <mat-icon matSuffix>percent</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="flex flex-col w-1/2">
+                <label>Inflation Rate (%)</label>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="inflation_rate" type="number">
+                    <mat-icon matSuffix>percent</mat-icon>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="flex w-full space-x-4">
+            <div class="flex flex-col w-1/2">
+                <label>Earnings (%)</label>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="earnings" type="number">
+                    <mat-icon matSuffix>percent</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="flex flex-col w-1/2">
+                <label>Fees (%)</label>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="fees" type="number">
+                    <mat-icon matSuffix>percent</mat-icon>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="flex w-full space-x-4">
+            <div class="flex flex-col w-1/2">
+                <label>Tax (%)</label>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="tax" type="number">
+                    <mat-icon matSuffix>percent</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="flex flex-col w-1/2">
+                <label>Withdrawal Rate (%)</label>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="withdrawal_rate" type="number">
+                    <mat-icon matSuffix>percent</mat-icon>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="flex w-full space-x-4">
+            <div class="flex flex-col w-1/2">
+                <label>Withdrawal Age Start</label>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="withdrawal_age_start" type="number">
+                    <mat-hint>Enter a value between 20 - 150</mat-hint>
+                </mat-form-field>
+            </div>
+
+            <div class="flex flex-col w-1/2">
+                <label>Contribution Age Stop</label>
+                <mat-form-field appearance="outline">
+                    <input matInput formControlName="contribution_age_stop" type="number">
+                    <mat-hint>Enter a value between 20 - 150</mat-hint>
+                </mat-form-field>
+            </div>
+    
+        </div>
+
+    </div>
+</div>
+<div mat-dialog-actions class="flex justify-end p-4 pt-0">
+    <button mat-stroked-button (click)="onCancel()">Cancel</button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="form.value" [disabled]="form.invalid">Apply</button>
+</div>
