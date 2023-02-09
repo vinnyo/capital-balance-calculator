@@ -47,7 +47,7 @@ export class CalculatorInputDialogComponent {
         [Validators.required, Validators.min(0), Validators.max(100)],
       ],
       withdrawal_rate: [
-        data?.tax || 0,
+        data?.withdrawal_rate || 0,
         [Validators.required, Validators.min(0), Validators.max(100)],
       ],
       withdrawal_age_start: [

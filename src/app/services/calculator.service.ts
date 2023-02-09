@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { BehaviorSubject, map, Subscription } from 'rxjs';
+import { BehaviorSubject, map, Subscription, tap } from 'rxjs';
 import { DEFAULT_INPUT } from '../constants';
 import { CalculatorInputDialogComponent } from '../dialogs/calculator-input-dialog.component/calculator-input-dialog.component';
 import { InputValues } from '../types';
@@ -16,11 +16,24 @@ export class CalculatorService {
     public readonly input$ = this._input.asObservable();
     set input(value: InputValues) {
         this._input.next(value);
-    }
+    };
 
     /** Calculated annual projections  */
-    public yearlyProjections$ = this.input$.pipe(
+    public yearlyProjections$ = this._input.pipe(
       map( input => calculateAnnualProjections(input))
+    );
+
+    /** Chart series data */
+    public chartData$ = this.yearlyProjections$.pipe(
+      map( projections => ({
+        labels: projections.map(e => `${e.year}`),
+        datasets:[
+          {
+            label:'Start Balance',
+            data: projections.map(e => e.start_balance)
+          }
+        ]
+      }))
     )
 
     constructor(private _dialog: MatDialog) {}
@@ -38,3 +51,7 @@ export class CalculatorService {
         });
     }
 }
+function sharedReplay(arg0: number): import("rxjs").OperatorFunction<InputValues, unknown> {
+  throw new Error('Function not implemented.');
+}
+

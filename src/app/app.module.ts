@@ -8,6 +8,7 @@ import { MaterialModule } from './material.module';
 import { CalculatorInputDialogComponent } from './dialogs/calculator-input-dialog.component/calculator-input-dialog.component';
 import { CalculatorInputComponent } from './components/calculator-input.component/calculator-input.component';
 import { ProjectionTableComponent } from './components/projection-table.component/projection-table.component';
+import { ProjectionChartComponent } from './components/projection-chart.component';
 
 @NgModule({
     declarations: [
@@ -15,6 +16,7 @@ import { ProjectionTableComponent } from './components/projection-table.componen
         CalculatorInputDialogComponent,
         CalculatorInputComponent,
         ProjectionTableComponent,
+        ProjectionChartComponent
     ],
     imports: [
         BrowserModule,
