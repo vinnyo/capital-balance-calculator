@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CalculatorService } from './services/calculator.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'cap-bal-calc';
+  
+  editValues = () => this.service.editInput();
+
+  constructor(private service: CalculatorService){}
 }
