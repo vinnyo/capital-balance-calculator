@@ -1,7 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.full-column{
+    @apply flex flex-col w-full
+}
+
+.full-row{
+    @apply flex w-full
+}
+
+.section-title{
+    @apply font-thin text-xl;
+}
+
+.input-block{
+    @apply flex flex-col items-center min-w-[5rem] mb-4;
+}
+.input-header{
+    @apply font-semibold mb-2;
+}
+
+.input-value{
+    @apply font-thin text-xl;
+}
+
+.cell{
+    @apply p-2 min-w-[5rem];
+}
+
+.cell .heading{
+    @apply font-semibold;
+}
