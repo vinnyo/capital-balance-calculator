@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { Subscription } from 'rxjs';
-import { DEFAULT_LINE_CHART_CONFIG } from '../constants';
 import { CalculatorService } from '../services/calculator.service';
 Chart.register(...registerables);
 

@@ -29,9 +29,36 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .cell{
-    @apply p-2 min-w-[5rem];
+    @apply p-2 bg-white min-w-[6rem];
 }
 
-.cell .heading{
-    @apply font-semibold;
+.cell.heading{
+    @apply bg-gray-200;
+}
+
+.cell.heading-2{
+    @apply font-medium;
+}
+
+/* Scrollbar CSS */
+
+/* Firefox */
+projection-table * {
+    scrollbar-width: auto;
+    scrollbar-color: #9c9c9c #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+projection-table *::-webkit-scrollbar {
+    width: 13px;
+}
+
+projection-table *::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+projection-table *::-webkit-scrollbar-thumb {
+    background-color: #9c9c9c;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
 }

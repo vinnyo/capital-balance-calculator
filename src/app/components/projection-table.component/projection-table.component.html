@@ -1,9 +1,6 @@
 <div class="full-column">
-    <div class="full-row my-4">
-        <span class="section-title">Annual Projections</span>
-    </div>
     <div class="full-row">
-        <div class="flex flex-col border-r">
+        <div class="flex flex-col">
             <div class="cell heading">Year</div>
             <div class="cell heading">Age</div>
             <div class="cell heading">Start Balance</div>
@@ -15,10 +12,10 @@
             <div class="cell heading">End Balance</div>
         </div>
         <ng-container *ngIf="projections$ | async as projections; else noDataState">
-            <div class="flex flex-row w-full overflow-x-auto">
-                <div *ngFor="let p of projections" class="flex flex-col">
-                    <div class="cell">{{ p.year }}</div>
-                    <div class="cell">{{ p.age }}</div>
+            <div class="full-row overflow-x-auto">
+                <div *ngFor="let p of projections" class="flex flex-col border border-l-0">
+                    <div class="cell heading-2">{{ p.year }}</div>
+                    <div class="cell heading-2 border-b">{{ p.age }}</div>
                     <div class="cell">{{ p.start_balance | currency:'AUD'}}</div>
                     <div class="cell">{{ p.contributions | currency:'AUD'}}</div>
                     <div class="cell">{{ p.earnings | currency:'AUD' }}</div>

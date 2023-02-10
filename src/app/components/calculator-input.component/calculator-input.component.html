@@ -1,6 +1,5 @@
-<div class="full-column py-4 px-4 border-b space-y-4">
-    <div class="full-row justify-between">
-        <span class="section-title">Input Parameters</span>
+<div class="full-column pb-4 border-b space-y-4">
+    <div class="full-row justify-end">
         <button mat-button color="primary" (click)="editValues()">Edit Values</button>
     </div>
     <ng-container *ngIf="input$ | async as input; else noInputState;">
@@ -11,27 +10,27 @@
             </div>
             <div class="input-block">
                 <span class="input-header">Contribution Rate</span>
-                <span class="input-value">{{input.contribution_rate / 100 | percent }}</span>
+                <span class="input-value">{{input.contribution_rate / 100 | percent: '1.0-2' }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Inflation Rate</span>
-                <span class="input-value">{{input.inflation_rate / 100 | percent }}</span>
+                <span class="input-value">{{input.inflation_rate / 100 | percent: '1.0-2' }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Earnings</span>
-                <span class="input-value">{{input.earnings / 100 | percent }}</span>
+                <span class="input-value">{{input.earnings / 100 | percent: '1.0-2' }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Fees</span>
-                <span class="input-value">{{input.fees / 100 | percent }}</span>
+                <span class="input-value">{{input.fees / 100 | percent: '1.0-2' }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Tax</span>
-                <span class="input-value">{{input.tax / 100 | percent}}</span>
+                <span class="input-value">{{input.tax / 100 | percent: '1.0-2' }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Withdrawal Rate</span>
-                <span class="input-value">{{input.withdrawal_rate / 100 | percent }}</span>
+                <span class="input-value">{{input.withdrawal_rate / 100 | percent: '1.0-2' }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Withdrawal Age Start</span>
