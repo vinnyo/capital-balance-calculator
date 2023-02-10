@@ -5,12 +5,22 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+@layer{
+    .column{
+        @apply flex flex-col;
+    }
+
+    .row{
+        @apply flex flex-row;
+    }
+}
+
 .full-column{
-    @apply flex flex-col w-full
+    @apply column w-full
 }
 
 .full-row{
-    @apply flex w-full
+    @apply row w-full
 }
 
 .section-title{
