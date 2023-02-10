@@ -1,24 +1,29 @@
 <header class="bg-gray-200">
-    <h1 mat-dialog-title >Edit Calculator Inputs</h1>
+    <h1 mat-dialog-title>Edit Calculator Inputs</h1>
 </header>
 <div mat-dialog-content>
     <div [formGroup]="form" class="full-column p-4 pt-0">
-
         <label>Salary ($)</label>
         <mat-form-field appearance="outline">
-            <input matInput formControlName="salary" type="number">
+            <input matInput formControlName="salary" type="number" />
             <mat-error *ngIf="form.controls['salary'].invalid">
                 Please enter a value for salary.
             </mat-error>
         </mat-form-field>
-    
+
         <div class="full-row space-x-4">
             <div class="column w-1/2">
                 <label>Contribution Rate (%)</label>
                 <mat-form-field appearance="outline">
-                    <input matInput formControlName="contribution_rate" type="number">
+                    <input
+                        matInput
+                        formControlName="contribution_rate"
+                        type="number"
+                    />
                     <mat-icon matSuffix>percent</mat-icon>
-                    <mat-error *ngIf="form.controls['contribution_rate'].invalid">
+                    <mat-error
+                        *ngIf="form.controls['contribution_rate'].invalid"
+                    >
                         Please enter value between 0 - 100.
                     </mat-error>
                 </mat-form-field>
@@ -26,7 +31,11 @@
             <div class="column w-1/2">
                 <label>Inflation Rate (%)</label>
                 <mat-form-field appearance="outline">
-                    <input matInput formControlName="inflation_rate" type="number">
+                    <input
+                        matInput
+                        formControlName="inflation_rate"
+                        type="number"
+                    />
                     <mat-icon matSuffix>percent</mat-icon>
                     <mat-error *ngIf="form.controls['inflation_rate'].invalid">
                         Please enter value between 0 - 100.
@@ -39,7 +48,7 @@
             <div class="column w-1/2">
                 <label>Earnings (%)</label>
                 <mat-form-field appearance="outline">
-                    <input matInput formControlName="earnings" type="number">
+                    <input matInput formControlName="earnings" type="number" />
                     <mat-icon matSuffix>percent</mat-icon>
                     <mat-error *ngIf="form.controls['earnings'].invalid">
                         Please enter value between 0 - 100.
@@ -49,7 +58,7 @@
             <div class="column w-1/2">
                 <label>Fees (%)</label>
                 <mat-form-field appearance="outline">
-                    <input matInput formControlName="fees" type="number">
+                    <input matInput formControlName="fees" type="number" />
                     <mat-icon matSuffix>percent</mat-icon>
                     <mat-error *ngIf="form.controls['fees'].invalid">
                         Please enter value between 0 - 100.
@@ -62,7 +71,7 @@
             <div class="column w-1/2">
                 <label>Tax (%)</label>
                 <mat-form-field appearance="outline">
-                    <input matInput formControlName="tax" type="number">
+                    <input matInput formControlName="tax" type="number" />
                     <mat-icon matSuffix>percent</mat-icon>
                     <mat-error *ngIf="form.controls['tax'].invalid">
                         Please enter value between 0 - 100.
@@ -72,7 +81,11 @@
             <div class="column w-1/2">
                 <label>Withdrawal Rate (%)</label>
                 <mat-form-field appearance="outline">
-                    <input matInput formControlName="withdrawal_rate" type="number">
+                    <input
+                        matInput
+                        formControlName="withdrawal_rate"
+                        type="number"
+                    />
                     <mat-icon matSuffix>percent</mat-icon>
                     <mat-error *ngIf="form.controls['withdrawal_rate'].invalid">
                         Please enter value between 0 - 100.
@@ -85,9 +98,15 @@
             <div class="column w-1/2">
                 <label>Withdrawal Age Start</label>
                 <mat-form-field appearance="outline">
-                    <input matInput formControlName="withdrawal_age_start" type="number">
+                    <input
+                        matInput
+                        formControlName="withdrawal_age_start"
+                        type="number"
+                    />
                     <mat-hint>Enter a value between 20 - 150</mat-hint>
-                    <mat-error *ngIf="form.controls['withdrawal_age_start'].invalid">
+                    <mat-error
+                        *ngIf="form.controls['withdrawal_age_start'].invalid"
+                    >
                         Please enter value between 20 - 150.
                     </mat-error>
                 </mat-form-field>
@@ -96,19 +115,30 @@
             <div class="column w-1/2">
                 <label>Contribution Age Stop</label>
                 <mat-form-field appearance="outline">
-                    <input matInput formControlName="contribution_age_stop" type="number">
+                    <input
+                        matInput
+                        formControlName="contribution_age_stop"
+                        type="number"
+                    />
                     <mat-hint>Enter a value between 20 - 150</mat-hint>
-                    <mat-error *ngIf="form.controls['contribution_age_stop'].invalid">
+                    <mat-error
+                        *ngIf="form.controls['contribution_age_stop'].invalid"
+                    >
                         Please enter value between 20 - 150.
                     </mat-error>
                 </mat-form-field>
             </div>
-    
         </div>
-
     </div>
 </div>
 <div mat-dialog-actions class="full-row justify-end p-4 pt-0">
     <button mat-stroked-button (click)="onCancel()">Cancel</button>
-    <button mat-flat-button color="primary" [mat-dialog-close]="form.value" [disabled]="form.invalid">Apply</button>
+    <button
+        mat-flat-button
+        color="primary"
+        [mat-dialog-close]="form.value"
+        [disabled]="form.invalid"
+    >
+        Apply
+    </button>
 </div>
