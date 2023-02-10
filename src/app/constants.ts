@@ -15,15 +15,3 @@ export const DEFAULT_INPUT: InputValues = {
     withdrawal_age_start: 66,
     contribution_age_stop: 66
 }
-
-export const DEFAULT_LINE_CHART_CONFIG = {
-    type: 'line',
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'top'
-            }
-        }
-    }
-}
