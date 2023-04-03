@@ -19,7 +19,7 @@ export class ProjectionChartComponent implements OnInit, OnDestroy {
     /** Subscription to chart data observable */
     private data_sub: Subscription;
 
-    constructor(private _service: CalculatorService) {}
+    constructor(private _service: CalculatorService) { }
 
     ngOnInit() {
         this.data_sub = this._service.chartData$.subscribe((data) => {
@@ -35,11 +35,11 @@ export class ProjectionChartComponent implements OnInit, OnDestroy {
                         responsive: true,
                         plugins: {
                             legend: {
-                                display:false
+                                display: false
                             }
                         },
-                        scales:{
-                            y:{
+                        scales: {
+                            y: {
                                 ticks: {
                                     callback: (value) => this.yAxisFormat(value)
                                 }
@@ -56,12 +56,13 @@ export class ProjectionChartComponent implements OnInit, OnDestroy {
         this.data_sub?.unsubscribe();
     }
 
-    private yAxisFormat(value:number|string){
+    private yAxisFormat(value: number | string) {
         //Format values to include thousand commas.
-        if(value >= 1000){
-            return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-          } else {
+        const toNum = Number(value);
+        if (!isNaN(toNum) && toNum >= 1000) {
+            return '$' + toNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        } else {
             return '$' + value;
-          }
+        }
     }
 }
