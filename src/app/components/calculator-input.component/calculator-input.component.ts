@@ -4,16 +4,16 @@ import { CalculatorService } from "src/app/services/calculator.service";
 @Component({
     selector: 'calculator-input',
     templateUrl: './calculator-input.component.html',
-    styles:[]
+    styles: []
 })
-export class CalculatorInputComponent{
+export class CalculatorInputComponent {
 
-    public input$ = this.service.input$.pipe();
+    public input = this.service.input;
 
     public editValues = () => this.service.editInput();
 
     constructor(
         private service: CalculatorService
-    ){}
+    ) { }
 
 }

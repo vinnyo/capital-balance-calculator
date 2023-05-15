@@ -4,61 +4,61 @@
             Edit Values
         </button>
     </div>
-    <ng-container *ngIf="input$ | async as input; else noInputState">
+    <ng-container *ngIf="input() as input; else noInputState">
         <div class="full-row flex-wrap space-x-4">
             <div class="input-block">
                 <span class="input-header">Salary</span>
                 <span class="input-value">{{
                     input.salary | currency : 'AUD'
-                }}</span>
+                    }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Contribution Rate</span>
                 <span class="input-value">{{
                     input.contribution_rate / 100 | percent : '1.0-2'
-                }}</span>
+                    }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Inflation Rate</span>
                 <span class="input-value">{{
                     input.inflation_rate / 100 | percent : '1.0-2'
-                }}</span>
+                    }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Earnings</span>
                 <span class="input-value">{{
                     input.earnings / 100 | percent : '1.0-2'
-                }}</span>
+                    }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Fees</span>
                 <span class="input-value">{{
                     input.fees / 100 | percent : '1.0-2'
-                }}</span>
+                    }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Tax</span>
                 <span class="input-value">{{
                     input.tax / 100 | percent : '1.0-2'
-                }}</span>
+                    }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Withdrawal Rate</span>
                 <span class="input-value">{{
                     input.withdrawal_rate / 100 | percent : '1.0-2'
-                }}</span>
+                    }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Withdrawal Age Start</span>
                 <span class="input-value">{{
                     input.withdrawal_age_start
-                }}</span>
+                    }}</span>
             </div>
             <div class="input-block">
                 <span class="input-header">Contribution Age Stop</span>
                 <span class="input-value">{{
                     input.contribution_age_stop
-                }}</span>
+                    }}</span>
             </div>
         </div>
     </ng-container>

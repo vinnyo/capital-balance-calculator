@@ -8,11 +8,10 @@ import { CalculatorService } from "src/app/services/calculator.service";
 })
 export class ProjectionTableComponent {
 
-    public projections$ = this._service.yearlyProjections$
+    public projections = this._service.yearlyProjections;
 
     constructor(
         private _service: CalculatorService
-    ){
-        this.projections$.subscribe( res => console.log("yearly projections ", res))
+    ) {
     }
 }

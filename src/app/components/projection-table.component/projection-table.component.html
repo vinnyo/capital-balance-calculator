@@ -11,14 +11,9 @@
             <div class="cell heading">Withdrawals</div>
             <div class="cell heading">End Balance</div>
         </div>
-        <ng-container
-            *ngIf="projections$ | async as projections; else noDataState"
-        >
+        <ng-container *ngIf="projections() else noDataState">
             <div class="full-row overflow-x-auto">
-                <div
-                    *ngFor="let p of projections"
-                    class="column border border-l-0"
-                >
+                <div *ngFor="let p of projections()" class="column border border-l-0">
                     <div class="cell heading-2">{{ p.year }}</div>
                     <div class="cell heading-2 border-b">{{ p.age }}</div>
                     <div class="cell">
@@ -32,9 +27,9 @@
                     <div class="cell">{{ p.tax | currency : 'AUD' }}</div>
                     <div class="cell">
                         {{
-                            p.withdrawal > 0
-                                ? (p.withdrawal | currency : 'AUD')
-                                : '-'
+                        p.withdrawal > 0
+                        ? (p.withdrawal | currency : 'AUD')
+                        : '-'
                         }}
                     </div>
                     <div class="cell">
